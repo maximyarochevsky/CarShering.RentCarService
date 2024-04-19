@@ -18,7 +18,7 @@ class CarController extends Controller
         return $this->carService->getAll();
     }
 
-    public function update(Request $request, Car $car): JsonResponse
+    public function update(CarRequest $request, Car $car): JsonResponse
     {
         $result = $this->carService->update($request, $car);
         if (!$result) {
