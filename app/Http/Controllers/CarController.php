@@ -7,7 +7,6 @@ use App\Models\Car;
 use App\Services\CarService;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
@@ -26,6 +25,16 @@ class CarController extends Controller
         }
 
         return response()->json(['success' => 'Успешно сохранено.'])->setEncodingOptions(JSON_UNESCAPED_UNICODE);
+    }
+
+    public function getItem(int $id): JsonResponse
+    {
+        $result = $this->carService->getItem($id);
+        if (!$result) {
+            return response()->json(['error' => 'У этого пользователя эта машина не забронирована.'])->setEncodingOptions(JSON_UNESCAPED_UNICODE);
+        }
+
+        return response()->json(['success' => "Айди машины: {$result->id}"])->setEncodingOptions(JSON_UNESCAPED_UNICODE);
     }
 
 }

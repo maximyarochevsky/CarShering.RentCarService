@@ -18,11 +18,16 @@ class CarService
         return $this->carRepository->getAll();
     }
 
-    public function update(Request $request, Car $car): ?Car
+    public function update(CarRequest $request, Car $car): ?Car
     {
         $request->merge(['id_user' => Auth::id()]);
 
         return $this->carRepository->update($request, $car);
+    }
+
+    public function getItem(int $id): ?Car
+    {
+        return $this->carRepository->getItem($id);
     }
 
 }
