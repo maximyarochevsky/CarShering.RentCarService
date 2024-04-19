@@ -12,6 +12,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $connection = 'car-sharing-auth';
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *

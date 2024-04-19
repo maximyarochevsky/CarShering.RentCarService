@@ -63,6 +63,15 @@ return [
             ]) : [],
         ],
 
+        'car-sharing-auth' => [
+            'driver' => 'mysql',
+            'host' => 'localhost',
+            'port' => '3306',
+            'database' => 'car-sharing-auth',
+            'username' => 'root',
+            'password' => 'mysql',
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
