@@ -16,11 +16,9 @@ class CarRequest extends FormRequest
 
     public function rules(): array
     {
-        $this->merge(['id_user' => Auth::id()]);
-
         return [
-            'booking_status' => [new CheckBookingStatusRule($this->car->id)],
-            'id_user' => [new CheckReBookingRule()],
+            'booking_status' => 'required|int',
+            'user_id' => [new CheckReBookingRule()],
         ];
     }
 }

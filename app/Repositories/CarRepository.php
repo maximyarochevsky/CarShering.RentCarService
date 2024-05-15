@@ -13,8 +13,9 @@ class CarRepository
         return Car::get();
     }
 
-    public function update(CarRequest $request, Car $car): ?Car
+    public function update(CarRequest $request, int $id): ?Car
     {
+        $car = Car::get()->where('id', '=', $id)->last();
         $result = $car->update($request->only($car->getFillable()));
 
         return $result ? $car : null;
@@ -22,7 +23,7 @@ class CarRepository
 
     public function getItem(int $id): ?Car
     {
-        return Car::where('id_user', '=', $id)->first();
+        return Car::where('user_id', '=', $id)->first();
     }
 
 }
