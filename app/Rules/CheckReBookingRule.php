@@ -11,8 +11,10 @@ class CheckReBookingRule implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         $result = Car::where($attribute, '=', $value)->first();
-        if ($result) {
-            $fail('Вы уже забронировали машину!');
+
+        if (isset($result) && $result->booking_status) {
+            dd('Эта машина уже забронирована!');
         }
     }
+
 }
