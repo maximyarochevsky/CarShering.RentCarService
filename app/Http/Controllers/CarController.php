@@ -32,10 +32,10 @@ class CarController extends Controller
     {
         $result = $this->carService->getItem($id);
         if (!$result) {
-            return response()->json(['error' => 'У этого пользователя эта машина не забронирована.'])->setEncodingOptions(JSON_UNESCAPED_UNICODE);
+            return response()->json(['response' => 'У этого пользователя эта машина не забронирована.'])->setEncodingOptions(JSON_UNESCAPED_UNICODE);
         }
 
-        return response()->json(['success' => "Айди машины: {$result->id}"])->setEncodingOptions(JSON_UNESCAPED_UNICODE);
+        return response()->json(['response' => "Айди машины: {$result->id}"])->setEncodingOptions(JSON_UNESCAPED_UNICODE);
     }
 
 }

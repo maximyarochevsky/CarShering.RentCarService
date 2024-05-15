@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\Feature\\Car\\CarControllerTest::testUpdate":7,"Tests\\Feature\\Car\\CarControllerTest::testGetItem":8},"times":{"Tests\\Unit\\ExampleTest::test_that_true_is_true":0.004,"Tests\\Feature\\Car\\CarControllerTest::testGetAll":0.026,"Tests\\Feature\\Car\\CarControllerTest::testUpdate":0.042,"Tests\\Feature\\Car\\CarControllerTest::testGetItem":0.005}}
